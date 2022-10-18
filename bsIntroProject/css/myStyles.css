@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color:white;
+	font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+
+#masthead{
+	background-image:url("../images/sutff/ArtKirby.png");
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position:center left;
+	padding:5%;
+	color:white;
+}
+
+.image1{
+	padding:0%;
+	transition-duration:0.2s;
+}
+
+.image1:hover{
+	padding:5%;
+	transition-duration:0.2s;
+}
+
+footer{
+	background-color:#002132;
+	color:white;
+}
+
+#about{
+	background-color:darkolivegreen;
+	color:white;
+	padding-left:20%;
+	padding-right:20%;
+	padding-top:6%;
+	padding-bottom:6%
+}
+
+.freeButton{
+	background-color:darkolivegreen;
+	border:solid white;
+	color:white;
+	border-radius:15px;
+	transition-duration:0.2s;
+}
+
+.freeButton:hover{
+	background-color:white;
+	color:darkolivegreen;
+	transition-duration:0.2s;
+}
+
+#footerfoot{
+	background-color:black;
+	padding:1%;
+}
+
+#icons i{
+	font-size:36px;
+	padding-left:3%;
+	padding-right:3%;
+	border:solid white;
+	border-radius:10px;
+	background-color:#002132;
+	color:white;
+	transition-duration:0.2s;
+}
+
+#icons i:hover{
+	font-size:36px;
+	padding-left:3%;
+	padding-right:3%;
+	border:none;
+	border-radius:10px;
+	background-color:white;
+	color:#002132;
+	transition-duration:0.2s;
+}
+
