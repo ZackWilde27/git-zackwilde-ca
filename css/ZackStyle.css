@@ -369,18 +369,45 @@ a img{
 	background-size:25%;
 	background-position:center right;
 	background-repeat:no-repeat;
+	padding:2%;
 }
 
 #aboutmusic{
-	background-image:url("https://www.abzense.com/artwork/temp.jpg");
-	background-size:25%;
-	background-position:center right;
+	background-image:url("https://zackwilde.ca/images/BackAbzen.png");
+	background-size:cover;
+	background-position:right;
 	background-repeat:no-repeat;
+	padding:2%;
 }
 
 #aboutgame{
-	background-image:url("https://www.abzense.com/artwork/temp.jpg");
-	background-size:25%;
+	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
+	background-size:cover;
 	background-position:center left;
 	background-repeat:no-repeat;
+	padding:2%;
+}
+
+#aboutetc{
+	background-image:url("../images/htmlCode.jpg");
+	background-size:cover;
+	padding:2%;
+}
+
+footer a{
+	padding:10px;	
+}
+
+footer a:hover{
+	color:blue;
+}
+
+#AboutSection a{
+	color:#AAACFF;
+	transition-duration:0.2s;
+}
+
+#AboutSection a:hover{
+	color:white;
+	transition-duration:0.2s;
 }
