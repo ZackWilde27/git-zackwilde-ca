@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Permanent+Marker&display=swap');
+
+section h1{
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	text-size: 128px;
+}
+
+header{
+	text-align:center;
+	background-image:url("../images/blightphoto.jpg");
+	background-size:30% 200%;
+	background-repeat:no-repeat;
+	background-position:-15% 2%;
+	background-color:black;
+	color:white;
+	position:sticky;
+}
+
+header h1{
+	font-family:'Permanent Marker', cursive;
+}
+
+nav{
+	background-color:goldenrod;
+	text-align:center;
+}
+
+nav a{
+	padding:1%;
+	text-decoration:none;
+	color:black;
+	transition-duration:0.3s;
+}
+
+nav a:hover{
+	padding:2%;
+	color:white;
+	text-size:larger;
+	transition-duration:0.3s;
+}
+
+body{
+	font-family: 'Gemunu Libre', sans-serif;
+}
+
+section{
+	margin:auto;
+	overflow:hidden;
+}
+
+#info{
+	overflow:hidden;
+	padding:1%;
+}
+
+#HeaderText{
+	padding:1%;
+}
+
+#Achievements{
+	background-color:goldenrod;
+	color:white;
+	margin:5%;
+	padding:1%;
+}
+
+#About{
+	background-color:black;
+	color:white;
+	padding:2% 6% 2% 6%;
+}
+
+#About img{
+	float:right;
+	margin:5px;
+}
+
+#About h1{
+	text-align:center;
+}
+
+#Blog{
+	background-color:black;
+	color:white;
+	margin:0%;
+	padding:0% 0% 0% 5%;
+	text-align:center;
+}
+
+#blogtext{
+	background-color:#252525;
+}
+
+#Blog a{
+	text-decoration:none;
+	color:white;
+	transition-duration:0.3s;
+}
+
+#Blog a:hover{
+	text-size:larger;
+	color:red;
+	transition-duration:0.3s;
+}
+
+#Blog ul{
+	text-decoration:none;
+}
+
+#merch{
+	text_align:center;
+	background-color:black;
+	color:white;
+}
+
+#abouttitle{
+	background-color:#252525;
+}
