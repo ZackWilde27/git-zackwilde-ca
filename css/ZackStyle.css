@@ -68,7 +68,7 @@ nav li{
 li a{
     font-size:24px;
     border-block-color:red;
-    color:white;
+    color:#AAACFF;
     text-align:left;
     text-decoration:none;
     transition-duration:0.2s;
@@ -76,7 +76,7 @@ li a{
 
 li a:hover{
 	font-size: 28px;
-	color:blue;
+	color:white;
     transition-duration:0.2s;
 }
 
@@ -188,7 +188,7 @@ li a:hover{
 
 a{
 	text-decoration:none;
-	color:white;
+	color:#AAACFF;
 }
 
 #codZombiesTitle{
@@ -373,25 +373,43 @@ a img{
 }
 
 #aboutmusic{
-	background-image:url("https://zackwilde.ca/images/BackAbzen.png");
+	background-image:url("https://zackwilde.ca/images/BackAbzenDark.jpg");
 	background-size:cover;
 	background-position:right;
 	background-repeat:no-repeat;
 	padding:2%;
+	transition-duration:0.5s;
 }
 
 #aboutgame{
-	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
+	background-image:url("https://zackwilde.ca/images/ueblueprintsdark.jpg");
 	background-size:cover;
 	background-position:center left;
 	background-repeat:no-repeat;
 	padding:2%;
+	transition-duration:0.5s;
+}
+
+#aboutgame:hover{
+	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
+	transition-duration:0.2s;
 }
 
 #aboutetc{
-	background-image:url("../images/htmlCode.jpg");
+	background-image:url("../images/htmlCodedark.jpg");
 	background-size:cover;
 	padding:2%;
+	transtion-duration:0.5s;
+}
+
+#aboutetc:hover{
+	background-image:url("../images/htmlCode.jpg");
+	transition-duration:0.2s;
+}
+
+#aboutmusic:hover{
+	background-image:url("https://zackwilde.ca/images/BackAbzen.png");
+	transition-duration:0.2s;
 }
 
 footer a{
