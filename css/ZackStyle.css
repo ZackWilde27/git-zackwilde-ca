@@ -365,7 +365,7 @@ a img{
 }
 
 #aboutme{
-	background-image:url("https://www.abzense.com/artwork/temp.jpg");
+	background-image:url("../images/zacklogo.svg");
 	background-size:25%;
 	background-position:center right;
 	background-repeat:no-repeat;
@@ -373,7 +373,7 @@ a img{
 }
 
 #aboutmusic{
-	background-image:url("https://zackwilde.ca/images/BackAbzenDark.jpg");
+	background-image:url("../images/BackAbzenDark.jpg");
 	background-size:cover;
 	background-position:right;
 	background-repeat:no-repeat;
@@ -382,7 +382,7 @@ a img{
 }
 
 #aboutgame{
-	background-image:url("https://zackwilde.ca/images/ueblueprintsdark.jpg");
+	background-image:url("../images/ueblueprintsdark.jpg");
 	background-size:cover;
 	background-position:center left;
 	background-repeat:no-repeat;
@@ -391,7 +391,7 @@ a img{
 }
 
 #aboutgame:hover{
-	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
+	background-image:url("../images/ueblueprints.jpg");
 	transition-duration:0.2s;
 }
 
@@ -408,7 +408,7 @@ a img{
 }
 
 #aboutmusic:hover{
-	background-image:url("https://zackwilde.ca/images/BackAbzen.png");
+	background-image:url("../images/BackAbzen.jpg");
 	transition-duration:0.2s;
 }
 
