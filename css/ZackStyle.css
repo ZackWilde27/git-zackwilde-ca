@@ -1,5 +1,5 @@
 ﻿body {
-    font-family:Montserrat, "Yu Gothic Medium", "Corbel Regular", Gadugi, "DejaVu Sans",  Verdana, "sans-serif";
+    font-family:'Montserrat', "Yu Gothic Medium", "Corbel Regular", Gadugi, "DejaVu Sans",  Verdana, "sans-serif";
     text-align:center;
     background-color:black;
     color:white;
@@ -26,7 +26,6 @@ header h1{
 }
 
 h1{
-	font-family: 'Maven Pro', sans-serif;
 	text-shadow:0px 3px 5px black;
 }
 
@@ -366,7 +365,7 @@ a img{
 }
 
 #aboutme{
-	background-image:url("../images/zacklogo.svg");
+	background-image:url("https://www.abzense.com/artwork/temp.jpg");
 	background-size:25%;
 	background-position:center right;
 	background-repeat:no-repeat;
@@ -374,7 +373,7 @@ a img{
 }
 
 #aboutmusic{
-	background-image:url("../images/BackAbzenDark.jpg");
+	background-image:url("https://zackwilde.ca/images/BackAbzenDark.jpg");
 	background-size:cover;
 	background-position:right;
 	background-repeat:no-repeat;
@@ -383,7 +382,7 @@ a img{
 }
 
 #aboutgame{
-	background-image:url("../images/ueblueprintsdark.jpg");
+	background-image:url("https://zackwilde.ca/images/ueblueprintsdark.jpg");
 	background-size:cover;
 	background-position:center left;
 	background-repeat:no-repeat;
@@ -392,7 +391,7 @@ a img{
 }
 
 #aboutgame:hover{
-	background-image:url("../images/ueblueprints.jpg");
+	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
 	transition-duration:0.2s;
 }
 
@@ -409,7 +408,7 @@ a img{
 }
 
 #aboutmusic:hover{
-	background-image:url("../images/BackAbzen.jpg");
+	background-image:url("https://zackwilde.ca/images/BackAbzen.png");
 	transition-duration:0.2s;
 }
 

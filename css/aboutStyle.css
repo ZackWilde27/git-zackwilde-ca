@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Moving all site-specific CSS to it's own file*/
+
+#aboutetc{
+	background-image:url("../images/htmlCodedark.jpg");
+	background-size:cover;
+	padding:2%;
+	transition-duration:0.5s;
+}
+
+#aboutetc:hover{
+	background-image:url("../images/htmlCode.jpg");
+	transition-duration:0.2s;
+}
+
+#aboutgame{
+	background-image:url("https://zackwilde.ca/images/ueblueprintsdark.jpg");
+	background-size:cover;
+	padding:2%;
+	transition-duration:0.5s;
+}
+
+#aboutgame:hover{
+	background-image:url("https://zackwilde.ca/images/ueblueprints.jpg");
+	transition-duration:0.2s;
+}
+
+#aboutmusic{
+	background-image:url("https://zackwilde.ca/images/BackAbzenDark.jpg");
+	background-size:cover;
+	background-position:center;
+	padding:2%;
+	transition-duration:0.5s;
+}
+
+#aboutmusic:hover{
+	background-image:url("https://zackwilde.ca/images/BackAbzen.jpg");
+	transition-duration:0.2s;
+}
+
+#aboutme{
+	background-image:url("https://zackwilde.ca/images/temp.jpg");
+	background-size:25%;
+	background-position:center right;
+	background-repeat:no-repeat;
+	padding:2%;
+}
