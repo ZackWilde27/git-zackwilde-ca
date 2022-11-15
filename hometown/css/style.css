@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	text-align:center;
+	color:white;
+	font-family: 'M PLUS 1 Code', sans-serif;
+}
+
+
+.back-Home{
+	background-image:url("../images/misc_bigben_reader.jpg");
+	background-size:cover;
+	background-position:center top;
+	background-attachment:fixed;
+}
+
+.back-Terrain{
+	background-image:url("../images/geography.jpg");
+	background-size:cover;
+	background-position:center top;
+	background-attachment:fixed;
+}
+
+.back-People{
+	background-image:url("../images/background_people.jpg");
+	background-size:cover;
+	background-position:center top;
+	background-attachment:fixed;
+}
+
+.back-Attract{
+	background-image:url("../images/background_attractions.jpg");
+	background-size:cover;
+	background-position:left top;
+	background-attachment:fixed;
+}
+
+.back-Ref{
+	background-image:url("../images/londonSkyline2.jpg");
+	background-size:cover;
+	background-position:left top;
+	background-attachment:fixed;
+}
+
+.back-Econ{
+	background-image:url("../images/londonEconomy.jpg");
+	background-size:cover;
+	background-position:left top;
+	background-attachment:fixed;
+}
+
+#background{
+	background-image:url("../images/attraction_readable.jpg");
+	background-size:cover;
+	background-position:center;
+}
+
+#backPeople2{
+	background-image:url("../images/background_people2.jpg");
+	background-size:cover;
+	background-position:center;
+}
+
+#backAttract2{
+	background-image:url("../images/background_fireworks.jpg");
+	background-size:cover;
+	background-position:center;
+}
+
+h1, h2{
+	text-shadow: 2px 2px 2px black;
+}
+
+a:link{
+	color:#FF8D8F;
+}
+
+a:visited{
+	color:#FFC0C1;
+}
+
+.bg-red{
+	background-color:red;
+}
+
+.bg-dred{
+	background-color:#2B0000;
+}
+
+.bg-lred{
+	background-color:#A35C5D;
+}
+
+.p-15{
+	padding:15%;
+}
+
+
+nav{
+	border-top:solid red;
+	background-color:black;
+}
+
+li a{
+	color:#FF8D8F;
+	font-size:18px;
+	padding: 0px 50px;
+}
+
+.col-md-6 img{
+	box-shadow: 2px 2px 2px 2px black;
+	border-radius:40px;
+}
+
+
+footer{
+	border-top:solid red;
+}

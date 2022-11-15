@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Zack's Bootstrap Kinda */
+
+
+/*Background Colors*/
+
+.zw-bgBlue{
+	background-color:#051346;
+}
+
+.zw-bgBlack{
+	background-color:black;
+}
+
+.zw-borderRed{
+	border-top:solid red;
+	border-bottom:solid red;
+}
+
+.zw-borderDRed{
+	border-top:solid #2B0000;
+	border-bottom:solid #2B0000;
+}
+
+
+
+/*Alignment*/
+
+.zw-centreVertically{
+	padding-top:259px;
+	padding-bottom:259px;
+}
+
+.zw-p5{
+	padding:5%;
+}
+
+.zw-p2{
+	padding:2%;
+}
+.zw-p1{
+	padding:1%;
+}
+.zw-pl5{
+	padding-left:5%;
+}
+
+.zw-textLeft{
+	text-align:left;
+}
+
+@media only screen and (max-width:768px){
+	.zw-p5{
+		padding:0;
+	}
+	
+	.zw-p2{
+		padding:0;
+	}
+	
+	.zw-p1{
+		padding:0;
+	}
+	
+	.zw-pl5{
+		padding-left:0%;
+	}
+	
+	.zw-textLeft{
+		text-align:center;
+	}
+}
