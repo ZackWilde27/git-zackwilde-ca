@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hide{
+	display:none;
+	transition-duration:0.2s;
+}
+
+.row label{
+	transition-duration:0.5s;
+}
+
+.row:hover label{
+	color:#AAACFF;
+	transition-duration:0.2s;
+}
+
+a{
+	color:#AAACFF;
+	transition-duration:0.5s;
+}
+
+a:hover{
+	color:white;
+	text-decoration: none;
+	transition-duration: 0.2s;
+}
+
+body{
+	text-align:center;
+	font-family: 'Montserrat', sans-serif;
+	background-color:black;
+	color:white;
+}
+
+header{
+	background-image:url("../images/BackAbstr.webp");
+	background-size:cover;
+	background-position:center;
+	background-attachment:fixed;
+	border-bottom:solid blue thick;
+	padding:7%;
+}
+
+h1{
+	font-family:'Ubuntu', sans-serif;
+}
+
+input{
+	margin-top:12px;
+	margin-bottom:12px;
+	background-color:black;
+	border-radius:15px;
+	color:white;
+	text-align:center;
+	transition-duration:0.5s;
+}
+
+input:active{
+	border:solid blue;
+}
+
+input:hover{
+	border:solid #AAACFF;
+}
+
+#Story{
+	padding:10%;
+}
+
+#submitButton{
+	border-radius:24px;
+	border:solid #AAACFF;
+	color:#AAACFF;
+	padding-left:30px;
+	padding-right:30px;
+	transition-duration:0.5s;
+}
+
+#submitButton:hover{
+	background-color:#AAACFF;
+	color:black;
+	transition-duration:0.2s;
+}
+
+video{
+	mix-blend-mode: screen;
+}
+
+footer{
+	border-top:solid blue;
+}
