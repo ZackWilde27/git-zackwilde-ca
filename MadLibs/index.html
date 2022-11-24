@@ -39,7 +39,8 @@
 		<h2>Zack&#39;s Javascript MadLibs</h2>
 	</header>
 	<div id="formArea">
-		
+		<h1 class="pt-5">Welcome to my MadLibs.</h1>
+		<h2>Write some text in each field and hit the Let&#39;s Go button to generate the story</h2>
 		<form name="madLibsForm" method="post" action="Javascript:Start();">
 			<div class="container py-5">
 				<div class="row">
@@ -191,9 +192,21 @@
 						<label for="act0">Activity&#58;</label>
 					</div>
 					<div class="col-md-7 text-left">
-						<input type="text" required id="act0" name="act0"> <br>
+						<span class="px-2">
+							<label for="act0">Javascript Coding</label>
+							<input type="radio" required id="act0" name="act0" value="Javascript Coding">
+						</span>
+						<span class="px-2">
+							<label for="act0">Shopping</label>
+							<input type="radio" required id="act1" name="act0" value="Shopping">
+						</span>
+						<span class="px-2">
+							<label for="act0">Painting</label>
+							<input type="radio" required id="act2" name="act0" value="Painting"><br>
+						</span>
 					</div>
 				</div>
+				
 				<div class="row">
 					<div class="col-md-5 text-right m-auto">
 						<label for="time0">Specific Time in the Future&#58;</label>
@@ -215,12 +228,11 @@
 						<label for="numb0">Number&#58;</label>
 					</div>
 					<div class="col-md-7 text-left">
-						<input type="text" required id="numb0" name="numb0"> <br>
+						<input type="number" required id="numb0" name="numb0">
 					</div>
 				</div>
 				<a><input id="submitButton" value="Let's Go!" type="submit"></a>
 			</div>
-			
 		</form>
 	</div>
 	
