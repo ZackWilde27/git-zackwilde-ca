@@ -7,23 +7,23 @@
 }
 
 .row label{
-	transition-duration:0.5s;
+	transition-duration:0.3s;
 }
 
 .row:hover label{
 	color:#AAACFF;
-	transition-duration:0.2s;
+	transition-duration:0.1s;
 }
 
 a{
 	color:#AAACFF;
-	transition-duration:0.5s;
+	transition-duration:0.3s;
 }
 
 a:hover{
 	color:white;
 	text-decoration: none;
-	transition-duration: 0.2s;
+	transition-duration: 0.1s;
 }
 
 body{
@@ -68,19 +68,34 @@ input:hover{
 	padding:5%;
 }
 
+#Story button{
+	background-color:black;
+	color:#AAACFF;
+	border:solid #AAACFF;
+	border-radius:15px;
+	margin-bottom:50px;
+	transition-duration:0.3s;
+}
+
+#Story button:hover{
+	background-color:#AAACFF;
+	color:black;
+	transition-duration:0.1s;
+}
+
 #submitButton{
 	border-radius:24px;
 	border:solid #AAACFF;
 	color:#AAACFF;
 	padding-left:30px;
 	padding-right:30px;
-	transition-duration:0.5s;
+	transition-duration:0.3s;
 }
 
 #submitButton:hover{
 	background-color:#AAACFF;
 	color:black;
-	transition-duration:0.2s;
+	transition-duration:0.1s;
 }
 
 video{
