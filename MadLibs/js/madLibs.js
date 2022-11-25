@@ -12,7 +12,6 @@ var Noun2 = "";
 var Building = "";
 var NounP1 = "";
 var Part = "";
-var Noun3 = "";
 var Cloth = "";
 var Film = "";
 var Letter = "";
@@ -24,7 +23,6 @@ var Activity = "";
 var Future = "";
 var Verb = "";
 var Numb = "";
-var First = true;
 var imagePath = "";
 
 function Start(){
@@ -38,7 +36,6 @@ function Start(){
 	Building = document.forms["madLibsForm"]["bnoun0"].value;
 	NounP1 = document.forms["madLibsForm"]["nounp1"].value;
 	Part = document.forms["madLibsForm"]["part0"].value;
-	Noun3 = document.forms["madLibsForm"]["noun3"].value;
 	Cloth = document.forms["madLibsForm"]["cloth0"].value;
 	Film = document.forms["madLibsForm"]["film0"].value;
 	Letter = document.forms["madLibsForm"]["lette0"].value;
