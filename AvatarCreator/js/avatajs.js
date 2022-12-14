@@ -25,7 +25,7 @@ var bgOption = 0;
 // UPDATING IMAGES
 //
 // Function to update character preview, because I'm going to need to do it a lot.
-// Component: 0 = glasses, 1 = hat, 2 = shirt, 3 = background. Only updates the component that changed.
+// Component: 0 = glasses, 1 = hat, 2 = shirt, 3 = background, 4 = name. Only updates the component that changed.
 function Reveal(Component){
 	switch(Component){
 		case 0:
@@ -40,6 +40,8 @@ function Reveal(Component){
 		case 3:
 			document.getElementById('back').innerHTML = "<img src='" + Character.Backg + "'>";
 			break
+		case 4:
+			document.getElementById('name').innerHTML = document.getElementById('aName').value;
 	}
 }
 
