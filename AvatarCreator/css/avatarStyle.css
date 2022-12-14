@@ -114,6 +114,7 @@ button:active{
 		top:0px;
 		left:0px;
 		max-width:100vw;
+		padding:none;
 	}
 	
 	.avatarMargin{
