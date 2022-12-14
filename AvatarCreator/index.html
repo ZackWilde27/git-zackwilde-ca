@@ -31,38 +31,68 @@
 
 <body>
 	<header>
-		<img src="https://zackwilde.ca/images/zack250x.png">
+		<img src="https://zackwilde.ca/images/zack250x.png" alt="Logo">
 		<h1>Zack&#39;s Avatar Creator</h1>
 	</header>
 	<section id="Creator">
 		<div class="container-fluid">
 			<div id="MakeArea" class="row py-5">
 				<div class="col-xl-6">
-					<div id="back" class="result"><img src="images/face.jpg"></div>
-					<div id="face" class="result"><img src="images/man.png"></div>
-					<div id="glasses" class="result"><img src="images/glasses1.png"></div>
-					<div id="hat" class="result"><img src="images/hat1.png"></div>
-					<div id="shirt" class="result"><img src="images/shirt1.png"></div>
+					<div>
+						<div id="back" class="result"><img src="images/face.jpg" alt="Background"></div>
+						<div id="face" class="result"><img src="images/man.png" alt="Face"></div>
+						<div id="glasses" class="result"><img src="images/glasses1.png" alt="Glasses"></div>
+						<div id="hat" class="result"><img src="images/hat1.png" alt="Hat"></div>
+						<div id="shirt" class="result"><img src="images/shirt1.png" alt="Shirt"></div>
+						<h1 id="name">Jerry Smith</h1>
+					</div>
+				</div>
+				<div class="col-xl-3 avatarMargin">
+					<h2>Name</h2>
+					<input onChange="Reveal(4);" id="aName" type="text" value="Jerry Smith">
 				</div>
 				<div class="col-xl-3 avatarMargin">
 					<h2>Hat</h2>
 					<button onClick="hLeft();" class="leftButton" type="button">&lt;-</button> 
-					<img id="hImg" class="img-fluid" width="200px" src="images/hat1.png">
+					<img id="hImg" class="img-fluid" width="200px" src="images/hat1.png" alt="HatSelectorImage">
 					<button onClick="hRight();" class="rightButton" type="button">-&gt;</button>
 					<h2>Glasses</h2>
 					<button onclick="gLeft();" class="leftButton" type="button">&lt;-</button> 
-					<img id="gImg" class="img-fluid" width="200px" src="images/glasses1.png">
+					<img id="gImg" class="img-fluid" width="200px" src="images/glasses1.png" alt="GlassesSelectorImage">
 					<button onclick="gRight();" class="rightButton" type="button">-&gt;</button>
-				</div>
-				<div class="col-xl-3 avatarMargin">
 					<h2>Shirt Colour</h2>
 					<button onclick="sLeft();" class="leftButton" type="button">&lt;-</button> 
-					<img id="sImg" class="img-fluid" width="200px" src="images/smaller/shirt1.png">
+					<img id="sImg" class="img-fluid" width="200px" src="images/smaller/shirt1.png" alt="ShirtSelectorImage">
 					<button onclick="sRight();" class="rightButton" type="button">-&gt;</button>
 					<h2>Background</h2>
 					<button onClick="bLeft();" class="leftButton" type="button">&lt;-</button> 
-					<img id="bImg" class="img-fluid" width="200px" src="images/smaller/face.jpg">
+					<img id="bImg" class="img-fluid" width="200px" src="images/smaller/face.jpg" alt="BackgroundSelectorImage">
 					<button onClick="bRight();" class="rightButton" type="button">-&gt;</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Section Learning Reflection</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p><strong>What moments were I most proud?</strong></p>
+					<p>When I started this course, I was already a bit familiar with code, but had absolutely no experience working with HTML. I've been putting the lessons to good use over on my personal website.</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>What tough situation did I handle well?</strong></p>
+					<p>JavaScript was quite natural for me to learn as I was already familiar with languages like C# and Python.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p><strong>What would I do over again?</strong></p>
+					<p>My Fictional Character assignment was behind schedule and I didn't really know what I was doing with the CSS, so I would definitely re-do that one.</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>What should I be doing that would help me in the future?</strong></p>
+					<p>Well, I still struggle with ambition, I couldn't add all the features I wanted to, and I imagine the interactive book won't be as ambitious as I want it to be either.</p>
 				</div>
 			</div>
 		</div>
