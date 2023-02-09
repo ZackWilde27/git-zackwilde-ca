@@ -23,13 +23,22 @@ tw-link{
 
 tw-link:visited{
  color:#AAACFF; 
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Begin" tags="" position="900,900" size="100,100">You have been dared by your friend to sneak into the local abandoned amusement park at midnight and bring back an Employee of the Month sticker to prove it. 
-
-(set: $knowsCode to false)
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Begin" tags="" position="950,975" size="100,100">You have been dared by your friend to sneak into the local abandoned amusement park at midnight and bring back an Employee of the Month sticker to prove it.
 
 Treat it like a text adventure game.
 
-[[Get Started-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="2" name="Tutorial" tags="" position="1150,1100" size="100,100">Treat this story like a text adventure. 
+[[Get Started-&gt; gtStart]]
+
+(set: $knowsCode to false)
+(set: $Started to true)
+(set: $Randy to false)
+(set: $haveBucket to false)
+(set: $haveGas to false)
+(set: $whichOn to 0)
+(set: $haveCrowbar to false)
+(set: $haveLever to false)
+(set: $reachOffice to false)
+(set: $haveCode to false)</tw-passagedata><tw-passagedata pid="2" name="Tutorial" tags="" position="1150,1100" size="100,100">Treat this story like a text adventure. 
 
 In each room/passage you will have several choices for actions, like Go to x, and Pick up y. I have code set up so previously explored areas change depending on story progress, items gathered, etc.
 
@@ -37,11 +46,11 @@ Also, this got a bit ambitous, so I had to cut elements out of the story, there 
 
 Ready?
 
-[[Go-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="3" name="StartingArea" tags="" position="1300,900" size="100,100">It&#39;s 12 AM. You are at the entrance of Bundy&#39;s Wonderland. It&#39;s dark, but this area is faintly lit by a nearby street lamp. There are several attractions nearby, but only one of them is functioning. The others are rusty, clearly haven&#39;t moved in years.
+[[Go-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="3" name=" gtStart" tags="" position="1700,1200" size="100,100">You are at the entrance. This spot is faintly lit by a nearby street lamp.
 
-[[Go to... -&gt; gtStart]]
+The sound of crickets is barely audible over rushing wind.
 
-[[Get the f**k out of here right now]]</tw-passagedata><tw-passagedata pid="4" name=" gtStart" tags="" position="1700,1200" size="100,100">You are at the entrance. This spot is faintly lit by a nearby street lamp.
+(if:$Randy is true)[Randy is underneath his car by the front gate.]
 
 Everything else is dark, except for 2 areas
 
@@ -54,10 +63,18 @@ Everything else is dark, except for 2 areas
 (if:$whichOn is 3)[[Go to Log Ride-&gt;Log Ride]]
 
 [[Go to Office Building-&gt;Office Building]]
+(if:$Started is true)[[On Second Thought, Get The F**k Out Of Here]]
+(if:$reachOffice is true)[[Shortcut to Breaker Box-&gt;Inspect Breaker Box]]
 
-(if:(history: where its name contains &quot;Inspect Breaker Box&quot;)&#39;s length &gt;= 1)[[Shortcut to Breaker Box-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="5" name="Merry-go-round" tags="" position="1100,1300" size="100,100">(if:$whichOn is not 2)[This area is too dark. You are likely to be eaten by a Grue.]
+(if:$Randy is true)[[Talk to Randy]]
 
-(if:$whichOn is 2)[The Merry-Go-Round is oddly functional. The lights are on, it&#39;s spinning and still playing music, although the distortion from faulty speakers makes it sound more like grumbling.] 
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="4" name="Merry-go-round" tags="" position="1100,1300" size="100,100">(if:$whichOn is not 2)[This area is too dark. You are likely to be eaten by a Grue.]
+
+(if:$whichOn is 2)[The Merry-Go-Round is oddly functional. The lights are on, it&#39;s spinning and still playing music, although the distortion from faulty speakers makes it sound more like grumbling.]
 
 (if:$whichOn is 2 and (history: where its name contains &quot;Take Bucket&quot;)&#39;s length is 0)[On a nearby park bench sits a bucket.]
 
@@ -65,7 +82,13 @@ Everything else is dark, except for 2 areas
 
 (if:$whichOn is 2 and (history: where its name contains &quot;Take Bucket&quot;)&#39;s length is 0)[[Inspect Bucket]]
 
-[[Go back-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="6" name="Ferris Wheel" tags="" position="2100,900" size="100,100">The Ferris Wheel has seen better days. It&#39;s once shiny white exterior has moulded into shades of green and brown.
+[[Back to Entrance-&gt; gtStart]]
+
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="5" name="Ferris Wheel" tags="" position="2100,900" size="100,100">The Ferris Wheel has seen better days. It&#39;s once shiny white exterior has moulded into shades of green and brown.
 
 (if:(history: where its name contains &quot;Take Crowbar&quot;)&#39;s length is not 1)[It&#39;s feeble motor is trying to spin, but there&#39;s a crowbar jammed in one of the spokes.] 
 
@@ -73,7 +96,15 @@ Everything else is dark, except for 2 areas
 
 (if:(history: where its name contains &quot;Take Crowbar&quot;)&#39;s length is not 1)[[Inspect Crowbar]]
 
-[[Go Back-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="7" name="Roller Coaster" tags="" position="1625,700" size="100,100">(if:$whichOn is not 1)[This area is too dark. You are likely to be eaten by a Grue.]
+[[Back to Entrance-&gt; gtStart]]
+
+(set: $Started to false)
+
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="6" name="Roller Coaster" tags="" position="1700,675" size="100,100">(if:$whichOn is not 1)[This area is too dark. You are likely to be eaten by a Grue.]
 
 (if:$whichOn is 1)[Even though the lights are on, it&#39;s difficult to tell with everything covered in rust.] 
 
@@ -81,29 +112,40 @@ Everything else is dark, except for 2 areas
 
 (if:$whichOn is 1 and $knowsCode is true)[The Roller Coaster&#39;s controls are installed, but with the amount of rust, it&#39;s not going another round.]
 
-(if:$whichOn is 1 and (history: where its name contains &quot;Take Lever&quot;)&#39;s length is 1 and $knowsCode is false)[[Use Lever]]
+(if:$whichOn is 1 and $haveLever is true and $knowsCode is false)[[Use Lever]]
 
 (if:$whichOn is 1 and $knowsCode is false)[[Talk to Person]]
 
-[[Go back-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="8" name="Log Ride" tags="" position="2200,1300" size="100,100">(if:$whichOn is not 3)[This area is too dark. You are likely to be eaten by a Grue.]
+[[Back to Entrance-&gt; gtStart]]
+
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="7" name="Log Ride" tags="" position="2200,1300" size="100,100">(if:$whichOn is not 3)[This area is too dark. You are likely to be eaten by a Grue.]
 
 (if:$whichOn is 3)[The Log Ride is a shadow of it&#39;s former self. The logs are gone, presumably rotted away over time, leaving just a pool of murky water with metal tracks. The water smells strongly of gasoline.]
+
+(if:$whichOn is 3 and $Randy is true)[Wait, gasoline!]
 
 (if:$whichOn is 3)[Next to the controls is what used to be stacked boxes, various items have been strewn about on the floor. ]
 
 (if:$whichOn is 3)[[Inspect Boxes]]
 
-(if:(history: where its name contains &quot;Chad&quot;)&#39;s length is 1)[Wait, gasoline!]
+(if:$whichOn is 3 and $Randy is true and $haveBucket is false)[I need something to hold the gas.]
 
-(if:(history: where its name contains &quot;Chad&quot;)&#39;s length is 1 and (history: where its name contains &quot;Take Bucket&quot;)&#39;s length is 0)[I need something to hold the gas.]
+(if:$whichOn is 3 and $haveBucket is true and $haveGas is false)[[Use Bucket]]
 
-(if:(history: where its name contains &quot;Chad&quot;)&#39;s length is 1 and (history: where its name contains &quot;Take Bucket&quot;)&#39;s length is 1 and (history: where its name contains &quot;Use Bucket&quot;)&#39;s length is 0)[[Use Bucket]]
+[[Back to Entrance-&gt; gtStart]]
 
-[[Back to Entrance-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="9" name="Office Building" tags="" position="1700,1600" size="100,100">You&#39;re in front of the Office, a brick building covered with moss, lit by flickering overhead lights. A few windows are smashed. Conventional wisdom suggests there&#39;s a back door somewhere.
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="8" name="Office Building" tags="" position="1700,1600" size="100,100">You&#39;re in front of the Office, a brick building covered with moss, lit by flickering overhead lights. A few windows are smashed. Conventional wisdom suggests there&#39;s a back door somewhere.
 
-(if:(history: where its name contains &quot;Inside Office&quot;)&#39;s length &gt;= 1)[[Go Inside-&gt;Inside Office]]
-
-(if:(history: where its name contains &quot;Inside Office&quot;)&#39;s length &lt;= 1)[[Inspect Front Door]]
+(if:$reachOffice is true)[[Go Inside-&gt;Inside Office]]
+(if:$reachOffice is false)[[Inspect Front Door]]
 
 [[Inspect Windows]]
 
@@ -111,18 +153,26 @@ Everything else is dark, except for 2 areas
 
 [[Back to Entrance -&gt; gtStart]]
 
-</tw-passagedata><tw-passagedata pid="10" name="Inspect Front Door" tags="" position="1750,1900" size="100,100">(if:(history: where its name contains &quot;Take Crowbar&quot;)&#39;s length is not 1)[The Front Door is barricaded, but the wood is old. A tool might be able to get through this.]
-(if:(history: where its name contains &quot;Take Crowbar&quot;)&#39;s length is 1)[The Front Door is barricaded, but that&#39;s not going to stop you]
-(if:(history: where its name contains &quot;Take Crowbar&quot;)&#39;s length is 1)[[Open Door-&gt;Inside Office]]
-[[Go back-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="11" name="Find Back Door" tags="" position="1525,1725" size="100,100">Around back you indeed find another door. However, this one is padlocked. No way through there.
+(set: $Started to false)
 
-[[Go Back-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="12" name="Inspect Lever" tags="" position="2650,1400" size="100,100">This lever looks like it was used to operate one of the attractions. It&#39;s very rusty, but the plot dictates that it may be useful.
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]</tw-passagedata><tw-passagedata pid="9" name="Inspect Front Door" tags="" position="1725,1900" size="100,100">(if:$haveCrowbar is false)[The Front Door is barricaded, but the wood is old. A tool might be able to get through this.]
+(if:$haveCrowbar is true)[The Front Door is barricaded, but that&#39;s not going to stop you]
+(if:$haveCrowbar is true)[[Open Door-&gt;Inside Office]]
+[[Go back-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="10" name="Find Back Door" tags="" position="1525,1725" size="100,100">Around back you indeed find another door. However, this one is padlocked. No way through there.
+
+[[Go Back-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="11" name="Inspect Lever" tags="" position="2700,1475" size="100,100">This lever looks like it was used to operate one of the attractions. It&#39;s very rusty, but the plot dictates that it may be useful.
 
 [[Take Lever]]
 
-[[Back to Office-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="13" name="Take Lever" tags="" position="2500,1300" size="100,100">You pocketed the lever.
+[[Back to Log Ride-&gt;Log Ride]]</tw-passagedata><tw-passagedata pid="12" name="Take Lever" tags="" position="2575,1275" size="100,100">You pocketed the lever.
 
-[[Back to Log Ride-&gt;Log Ride]]</tw-passagedata><tw-passagedata pid="14" name="Inspect Boxes" tags="" position="2725,1175" size="100,100">The label on the toppled box has &quot;REPLACEMENT&quot; written in Sharpie on the side. 
+[[Back to Log Ride-&gt;Log Ride]]
+
+(set: $haveLever to true)</tw-passagedata><tw-passagedata pid="13" name="Inspect Boxes" tags="" position="2725,1175" size="100,100">The label on the toppled box has &quot;REPLACEMENT&quot; written in Sharpie on the side. 
 
 (if:(history: where its name contains &quot;Take Lever&quot;)&#39;s length is not 1)[It&#39;s mostly scrap parts you don&#39;t recognize but you did find a rusty lever buried in the junk.]
 
@@ -130,19 +180,19 @@ Everything else is dark, except for 2 areas
 
 (if:(history: where its name contains &quot;Take Lever&quot;)&#39;s length is not 1)[[Inspect Lever]]
 
-[[Back to Log Ride-&gt;Log Ride]]</tw-passagedata><tw-passagedata pid="15" name="Get the f**k out of here right now" tags="" position="900,600" size="100,100">You try calling for someone to pick you up. There&#39;s no cell service. Looks like you are stuck here for a while, may as well complete the mission.
-
-[[Alright, fine-&gt;StartingArea]]</tw-passagedata><tw-passagedata pid="16" name="Inspect Crowbar" tags="" position="2275,1000" size="100,100">Oh my, this is Gordan Freeman&#39;s crowbar, he must have left it here in his haste to leave.
+[[Back to Log Ride-&gt;Log Ride]]</tw-passagedata><tw-passagedata pid="14" name="Inspect Crowbar" tags="" position="2275,1000" size="100,100">Oh my, this is Gordan Freeman&#39;s crowbar, he must have left it here in his haste to leave.
 
 [[Take Crowbar]]
 
-[[Back to Ferris Wheel-&gt;Ferris Wheel]]</tw-passagedata><tw-passagedata pid="17" name="Take Crowbar" tags="" position="2100,1100" size="100,100">You took the crowbar.
+[[Back to Ferris Wheel-&gt;Ferris Wheel]]</tw-passagedata><tw-passagedata pid="15" name="Take Crowbar" tags="" position="2100,1100" size="100,100">You took the crowbar.
 
-[[Back to Ferris Wheel-&gt;Ferris Wheel]]</tw-passagedata><tw-passagedata pid="18" name="Inside Office" tags="" position="1200,1800" size="100,100">You are inside the management office building. The floor is a grey carpet material, the walls are a blank off-white. Dusty would be an understatement.
+[[Back to Ferris Wheel-&gt;Ferris Wheel]]
+
+(set:$haveCrowbar to true)</tw-passagedata><tw-passagedata pid="16" name="Inside Office" tags="" position="1200,1800" size="100,100">You are inside the management office building. The floor is a grey carpet material, the walls are a blank off-white. Dusty would be an understatement.
 
 Against the wall there is a trashy wooden desk, with a breaker box to the right. 
 
-On the other side of the room is a safe labelled &quot;Employee of the Month Stickers&quot;.
+On the other side of the room, on a stack of papers is a safe labelled &quot;Employee of the Month Stickers&quot;.
 
 [[Inspect Desk]]
 
@@ -150,9 +200,17 @@ On the other side of the room is a safe labelled &quot;Employee of the Month Sti
 
 [[Inspect Safe]]
 
-[[Back Outside-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="19" name="Inspect Desk" tags="" position="1300,2025" size="100,100">The Desk has various books and other instructional material laid out. Things like employee manuals, blueprints, code books, etc.
+[[Back Outside-&gt;Office Building]]
 
-[[Seems normal.-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="20" name="Inspect Breaker Box" tags="" position="1475,2000" size="100,100">This appears to be the breaker box for the attractions. 
+Inventory:
+(if:$haveCrowbar is true)[Crowbar]
+(if:$haveBucket is true and $haveGas is false)[Bucket]
+(if:$haveLever is true)[Lever]
+(if:$haveGas is true)[Bucket of Gas]
+
+(set:$reachOffice to true)</tw-passagedata><tw-passagedata pid="17" name="Inspect Desk" tags="" position="1200,2050" size="100,100">The Desk has various books and other instructional material laid out. Things like employee manuals, blueprints, code books, etc.
+
+[[Seems normal.-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="18" name="Inspect Breaker Box" tags="" position="1475,2000" size="100,100">This appears to be the breaker box for the attractions. 
 
 There isn&#39;t enough power to have multiple attractions on at once.
 
@@ -166,78 +224,127 @@ There isn&#39;t enough power to have multiple attractions on at once.
 (if:$whichOn is not 0)[[Turn on Ferris Wheel]]
 (if:$whichOn is not 3)[[Turn on Log Ride]]
 [[Back to Office-&gt;Inside Office]]
-[[Shortcut to Entrance-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="21" name="Turn on Merry-Go-Round" tags="" position="1500,2200" size="100,100">(set: $whichOn to 2)
+[[Shortcut to Entrance-&gt; gtStart]]</tw-passagedata><tw-passagedata pid="19" name="Turn on Merry-Go-Round" tags="" position="1500,2200" size="100,100">(set: $whichOn to 2)
 
 You turned on the Merry-Go-Round.
 
-[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="22" name="Turn on Roller Coaster" tags="" position="1625,2200" size="100,100">(set: $whichOn to 1)
+[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="20" name="Turn on Roller Coaster" tags="" position="1625,2200" size="100,100">(set: $whichOn to 1)
 
 You turned on the Roller Coaster
 
-[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="23" name="Turn on Ferris Wheel" tags="" position="1350,2200" size="100,100">(set: $whichOn to 0)
+[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="21" name="Turn on Ferris Wheel" tags="" position="1350,2200" size="100,100">(set: $whichOn to 0)
 
 You turned on the Ferris Wheel
 
-[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="24" name="Turn on Log Ride" tags="" position="1750,2200" size="100,100">(set: $whichOn to 3)
+[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="22" name="Turn on Log Ride" tags="" position="1750,2200" size="100,100">(set: $whichOn to 3)
 
 You turned on the Log Ride.
 
-[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="25" name="Use Lever" tags="" position="1325,375" size="100,100">You used the lever to start the Roller Coaster. With a screech and some bangs it eventually starts jutting along, allowing the cart to finally reach the end.
+[[Go Back-&gt;Inspect Breaker Box]]</tw-passagedata><tw-passagedata pid="23" name="Use Lever" tags="" position="1300,300" size="100,100">You used the lever to start the Roller Coaster. With a screech and some bangs it eventually starts jutting along, allowing the cart to finally reach the end.
 
 Unknown: Thank you so much.
 
 [[&quot;Hey, uhh do you happen to know the combination for the office safe?&quot;]]
 
-[[&quot;No problem, hey what&#39;s your name?&quot;-&gt;uLS]]</tw-passagedata><tw-passagedata pid="26" name="Talk to Person" tags="" position="1975,375" size="100,100">Unknown: Hello? Is anyone there? Please get me out of this thing.
+[[&quot;No problem, hey what&#39;s your name?&quot;-&gt;uLS]]</tw-passagedata><tw-passagedata pid="24" name="Talk to Person" tags="" position="1975,375" size="100,100">Unknown: Hello? Is anyone there? Please get me out of this thing.
 
 [[&quot;How did you end up here?&quot;-&gt;How did you end up here?]]
 
-[[Don&#39;t worry, I&#39;ll get you out of this somehow.-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="27" name="How did you end up here?" tags="" position="2300,450" size="100,100">Unknown: The park had an immediate evacuation, didn&#39;t even get us out first.
+[[Don&#39;t worry, I&#39;ll get you out of this somehow.-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="25" name="How did you end up here?" tags="" position="2300,450" size="100,100">Unknown: The park had an immediate evacuation, didn&#39;t even get us out first.
 
 [[&quot;Us?&quot;-&gt;Us?]]
 
-[[&quot;That&#39;s awful, I&#39;ll try and get you out.&quot;-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="28" name="Us?" tags="" position="2125,650" size="100,100">Unknown: I wasn&#39;t alone at first.
+[[&quot;That&#39;s awful, I&#39;ll try and get you out.&quot;-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="26" name="Us?" tags="" position="2125,650" size="100,100">Unknown: I wasn&#39;t alone at first.
 
-[[...-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="29" name="Inspect Safe" tags="" position="875,1975" size="100,100">Compared to everything around it, this safe is quite clean and proper. It&#39;s got a combination lock.
+[[...-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="27" name="Inspect Safe" tags="" position="875,1975" size="100,100">Compared to everything around it, this safe is quite clean and proper. It&#39;s got a combination lock.
 
-(if:(history: where its name contains &quot;&quot;)&#39;s length is 0)[You don&#39;t know what the combo is. Maybe it&#39;ll be around here somewhere?]
+(if:$knowsCode is false)[You don&#39;t know what the combo is. Maybe it&#39;ll be around here somewhere?]
 
 [[Attempt Passcode]]
 
-[[Go Back-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="30" name="Attempt Passcode" tags="" position="850,2175" size="100,100">(if:$knowsCode is true)[You carefully type in the sequence 1-2-3-4]
+[[Go Back-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="28" name="Attempt Passcode" tags="" position="850,2175" size="100,100">(if:$knowsCode is true)[You carefully type in the sequence 1-2-3-4]
 (if:$knowsCode is false)[You have no idea what the code could be.]
 (if:$knowsCode is true)[[Here goes nothing.-&gt;TryPass]]
 
-[[Back to Office-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="31" name="TryPass" tags="" position="650,2225" size="100,100">Alright, you got the stickers.
+[[Back to Office-&gt;Inside Office]]</tw-passagedata><tw-passagedata pid="29" name="TryPass" tags="" position="650,2225" size="100,100">Alright, you got the stickers.
 
-[[Now let&#39;s get out of here.]]</tw-passagedata><tw-passagedata pid="32" name="uLS" tags="" position="1300,650" size="100,100">Chad: My name is Chad, I can&#39;t thank you enough my friend. Also, before I got stuck, I overheard something about the safe combination being 1234.
+(if:$Randy is false)[[Now let&#39;s get out of here.]]
+
+(if:$Randy is true)[[Let&#39;s meet up with Randy-&gt;Inside Office]]
+
+(set: $haveCode to true)</tw-passagedata><tw-passagedata pid="30" name="uLS" tags="" position="1125,475" size="100,100">Randy: My name is Randy, I can&#39;t thank you enough my friend. Also, before I got stuck, I overheard something about the safe combination being 1234.
 
 (set: $knowsCode to true)
 
-[[Wow, thanks!-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="33" name="Ride the Merry-Go-Round" tags="" position="900,1300" size="100,100">You stop to have at least a little fun on your terrifying mission.
+[[&quot;Wow, thanks!&quot;-&gt;Randy]]</tw-passagedata><tw-passagedata pid="31" name="Ride the Merry-Go-Round" tags="" position="900,1300" size="100,100">You stop to have at least a little fun on your terrifying mission.
 
-[[Back to Merry-Go-Round-&gt;Merry-go-round]]</tw-passagedata><tw-passagedata pid="34" name="Inspect Bucket" tags="" position="1150,1475" size="100,100">This bucket is stained, but at least there&#39;s nothing inside it.
+[[Back to Merry-Go-Round-&gt;Merry-go-round]]</tw-passagedata><tw-passagedata pid="32" name="Inspect Bucket" tags="" position="1175,1550" size="100,100">This bucket is stained, but at least there&#39;s nothing inside it.
 
 [[Take Bucket]]
 
-[[Go Back-&gt;Merry-go-round]]</tw-passagedata><tw-passagedata pid="35" name="Take Bucket" tags="" position="1000,1550" size="100,100">You pocket the bocket-.
+[[Go Back-&gt;Merry-go-round]]</tw-passagedata><tw-passagedata pid="33" name="Take Bucket" tags="" position="925,1525" size="100,100">You pocket the bocket-.
 -I mean bucket.
 
-[[Back to Merry-Go-Round-&gt;Merry-go-round]]</tw-passagedata><tw-passagedata pid="36" name="Use Bucket" tags="" position="2325,1475" size="100,100">You scoop up the gasoline with your bucket.
+[[Back to Merry-Go-Round-&gt;Merry-go-round]]
 
-[[Back to Log Ride-&gt;Log Ride]]</tw-passagedata><tw-passagedata pid="37" name="Agreed." tags="" position="425,1050" size="100,100">So you and Chad drive off, hoping that both of you never have to go there ever again.
+(set: $haveBucket to true)</tw-passagedata><tw-passagedata pid="34" name="Use Bucket" tags="" position="2325,1475" size="100,100">You scoop up the gasoline with your bucket.
 
-[[The End. Play Again?-&gt;Begin]]</tw-passagedata><tw-passagedata pid="38" name="Now let&#39;s get out of here." tags="" position="450,2075" size="100,100">You drove home. Now ready to show your friend that you are truly fearless.
+[[Back to Log Ride-&gt;Log Ride]]
+
+(set: $haveGas to true)</tw-passagedata><tw-passagedata pid="35" name="Agreed." tags="" position="425,1050" size="100,100">So you and Chad drive off, hoping that both of you never have to go there ever again.
+
+[[The End. Play Again?-&gt;Begin]]</tw-passagedata><tw-passagedata pid="36" name="Now let&#39;s get out of here." tags="" position="450,2075" size="100,100">You drove home. Now ready to show your friend that you are truly fearless.
 
 The End.
+Ending 1/3
 
-[[Play again?-&gt;Begin]]</tw-passagedata><tw-passagedata pid="39" name="&quot;Hey, uhh do you happen to know the combination for the office safe?&quot;" tags="" position="1600,425" size="100,100">Unknown: Yeah actually, before I got stuck I overheard something about the combination being 1234. My name is Chad by the way.
+[[Play again?-&gt;Begin]]</tw-passagedata><tw-passagedata pid="37" name="&quot;Hey, uhh do you happen to know the combination for the office safe?&quot;" tags="" position="1550,300" size="100,100">Unknown: Yeah actually, before I got stuck I overheard something about the combination being 1234. My name is Randy by the way.
 
 (set: $knowsCode to true)
 
-[[&quot;Wow, thanks Chad!&quot;-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="40" name="Inspect Windows" tags="" position="1925,1650" size="100,100">The windows are cracked and smashed, it looks like there might be enough room to squeeze through, but the chances of slicing something are too high.
+[[&quot;Wow, thanks Randy!&quot;-&gt;Randy]]</tw-passagedata><tw-passagedata pid="38" name="Inspect Windows" tags="" position="1925,1650" size="100,100">The windows are cracked and smashed, it looks like there might be enough room to squeeze through, but the chances of slicing something are too high.
 
-[[Back to Office-&gt;Office Building]]</tw-passagedata></tw-storydata>
+[[Back to Office-&gt;Office Building]]</tw-passagedata><tw-passagedata pid="39" name="On Second Thought, Get The F**k Out Of Here" tags="" position="750,800" size="100,100">You drive home, relieved that the nightmare is finally over. It&#39;s honestly suprising how long you managed to last, given the circumstances. But unforunately, you don&#39;t have bragging rights.
+
+The End
+Ending 2/3
+
+[[Play Again?-&gt;Begin]]</tw-passagedata><tw-passagedata pid="40" name="Randy" tags="" position="1400,525" size="100,100">Randy: Thanks man, although now I&#39;m stuck here. By now whatever gas was in my car is no good.
+
+[[I can help with that]]
+
+[[I&#39;m sorry, I&#39;m not sure if there&#39;s anything I can do.]]</tw-passagedata><tw-passagedata pid="41" name="I can help with that" tags="" position="1450,850" size="100,100">Randy: You can? You&#39;re a life saver man, Meet me at the entrance and I&#39;ll explain what I need. My car&#39;s got some fixes to make first.
+
+(set: $Randy to true)
+
+(set: $RandyFirst to true)
+
+[[&quot;Sounds good.&quot;-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="42" name="I&#39;m sorry, I&#39;m not sure if there&#39;s anything I can do." tags="" position="1175,750" size="100,100">Randy: I understand, I&#39;ll see what I can do on my own.
+
+[[Sounds good.-&gt;Roller Coaster]]</tw-passagedata><tw-passagedata pid="43" name="Talk to Randy" tags="" position="2250,1725" size="100,100">(if:$RandyFirst is true)[Hey, so here&#39;s the deal. The gas in my car has gone bad, it&#39;s been a while. I need to get my hands on some more.]
+
+(if:$RandyFirst is false)[Hey, did you find the gasoline?]
+
+(if:$RandyFirst is true)[[I&#39;ll see what I can find.-&gt; gtStart]]
+
+(if:$RandyFirst is false and $haveGas is true)[[Yeah, I got some here.]]
+
+(if:$RandyFirst is false and $haveGas is false)[[No, not yet.-&gt; gtStart]]
+
+(set:$RandyFirst to false)</tw-passagedata><tw-passagedata pid="44" name="Yeah, I got some here." tags="" position="2475,1825" size="100,100">Randy: Awesome! That should be all we need. Let&#39;s make like a tree and get out of here.
+
+[[Let&#39;s Go!-&gt;RandyOut]]
+
+[[That&#39;s not even... never mind-&gt;RandyOut]]</tw-passagedata><tw-passagedata pid="45" name="RandyOut" tags="" position="2200,1925" size="100,100">You and Randy drive off, leaving the decrepit creepy park for hopefully the last time.
+
+(if:$haveCode is true)[You also have bragging rights.]
+(if:$haveCode is false)[Unfortunately in your haste, you completely forgot the stickers! Looks like you lost the dare.]
+
+The End
+(if:$haveCode is true)[Ending 3/4]
+(if:$haveCode is false)[Ending 4/4]
+
+[[Play Again?-&gt;Begin]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
