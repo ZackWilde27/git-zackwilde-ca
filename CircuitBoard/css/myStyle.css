@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+/* -z */
+
+
+/* TAGS */
+
+body{
+	text-align:center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4{
+	font-family: 'Bungee', cursive;
+}
+
+/* IDs */
+
+#Hero{
+	background-image:url("../images/heroDictionary_Desktop.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center bottom;
+}
+
+#heroContainer{
+	height:1300px;
+	margin-top:150px;
+	padding:150px 250px 0px 250px;
+}
+
+#topOffset{
+	padding:12px;
+	display:inherit;
+}
+
+/* CLASSES */
+
+.beegText{
+	font-size:100px;
+}
+
+.carousel-control-next-icon{
+	background-color:#5836E5;
+	padding:10%;
+	border-radius:100%;
+}
+
+.carousel-control-prev-icon{
+	background-color:#5836E5;
+	padding:10%;
+	border-radius:100%;
+}
+
+.display-5{
+	font-size:32px;
+}
+
+.zw-imgKindaRoundButNotReally{
+	border-radius:15px;
+}
+
+.notSoBeegText{
+	font-size:72px;
+}
+
+.theseButtons{
+	padding:1% 3%;
+	background-color:#5836E5;
+	border:solid #5836E5 thick;
+	color:white;
+	border-radius:30px;
+	transition-duration:0.3s;
+}
+
+.theseButtons:hover{
+	background-color:white;
+	border:solid white thick;
+	color:#5836E5;
+	transition-duration:0.1s;
+}
+
+.zw-bgCyan{
+	background-color:#54D7F5;
+}
+
+.zw-bgGrad{
+	background-image:url("../images/bg_gradient.jpg");
+	background-repeat:repeat-y;
+	background-size:contain;
+}
+
+.zw-bgPurple{
+	background-color:#5836E5;
+}
+
+.zw-exPB{
+	padding-bottom:0;
+}
+
+.zw-pcOnly{
+	display:inherit;
+}
+
+.zw-moOnly{
+	display:none;
+}
+
+/* took this value from bootstrap. */
+.zw-pt5{
+	padding-top:3rem;
+}
+
+
+.zw-mt5{
+	margin-top:3rem;
+}
+
+.zw-tcPurple{
+	color:#5836E5;
+}
+
+.zw-textLeft{
+	text-align:left;
+}
+
+.zw-textRight{
+	text-align:right;
+}
+
+/* CAROUSEL */
+
+/*
+    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
+*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Show 4th slide on md if col-md-4*/
+    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    /* Show 3rd slide on sm if col-sm-6*/
+    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) {
+    .carousel-item {
+        margin-right: 0;
+    }
+    /* show 2 items */
+    .carousel-inner .active + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* MD */
+@media (min-width: 768px) {
+    /* show 3rd of 3 item slide */
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+    }
+}
+/* LG */
+@media (min-width: 991px) {
+    /* show 4th item */
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    /* Show 5th slide on lg if col-lg-3 */
+    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -25%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction //t - previous slide direction last item animation fix */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+    }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 768px) {
+	#Hero{
+		background-image:url("../images/heroDictionary_mobile.jpg");
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center bottom;
+	}
+	
+	#heroContainer{
+		padding:50px 0px 50px 0px;
+		height:auto;
+	}
+	
+	#topOffset{
+		padding:0;
+		background-color:#5836E5;
+	}
+	
+	.beegText{
+		font-size:64px;
+	}
+	
+	.notSoBeegText{
+		font-size:48px;
+	}
+	
+	.zw-exPB{
+		padding-bottom:256px;
+	}
+	
+	.zw-pt5{
+		padding-top:0;
+	}
+	
+	.zw-mt5{
+		margin-top:0;
+	}
+	
+	.zw-textLeft{
+		text-align:center;
+	}
+
+	.zw-textRight{
+		text-align:center;
+	}
+	
+	.zw-pcOnly{
+		display:none;
+	}
+
+	.zw-moOnly{
+		display:inline-block;
+	}
+	
+}
