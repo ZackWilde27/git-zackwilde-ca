@@ -1,0 +1,85 @@
+/* CSS Document */
+
+body{
+    background-color:#f1b098;
+    color:white;
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer{
+    background-color:#DDDDDD;
+    padding-top:5%;
+    padding-bottom:5%;
+}
+
+.bg-two{
+    background-color:#f6c9b4;
+    transition-duration:0.3s;
+    color:white;
+}
+
+.bg-two:hover{
+    background-color:white;
+    transition-duration:0.1s;
+    color:black;
+    cursor:pointer;
+}
+
+.bg-three{
+    background-color:#fdf2ec;
+    box-shadow:50px;
+}
+
+.cursive{
+    font-family: 'Dancing Script', cursive;
+}
+
+.pm_btn{
+    border-color:white;
+    background-color:none;
+    color:white;
+    transition-duration:0.3s;
+    border-radius:30px;
+}
+
+.pm_btn:hover{
+    border-color:#f1b098;
+    background-color:white;
+    color:#f1b098;
+    transition-duration:0.1s;
+}
+
+.pm_nav{
+    background-color:#ffece3;
+    color:black;
+}
+
+.pm_textBlack{
+    color:black;
+    transition-duration:0.3s;
+}
+
+.pm_linkBlack{
+    color:black;
+    transition-duration:0.3s;
+}
+
+.pm_linkBlack:hover{
+    color:white;
+    transition-duration:0.1s;
+}
+
+.pm_textPink{
+    color:#f1b098;
+}
+
+.searchText{
+    width:100%;
+}
+
+header{
+    background-image:url("../images/background.jpg");
+    background-position:center;
+    background-size:cover;
+}
