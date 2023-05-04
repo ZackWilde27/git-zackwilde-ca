@@ -1,2 +1,2 @@
-# Website Design Course for College
+# Website projects for college
 nothing to see here
